@@ -1,0 +1,88 @@
+---
+name: first-network-org2
+version: 1.0.0
+client:
+  organization: Org2
+  connection:
+    timeout:
+      peer:
+        endorser: '300'
+organizations:
+  Org2:
+    mspid: Org2MSP
+    peers:
+    - peer0.org2.fabric-iot.edu
+    - peer1.org2.fabric-iot.edu
+    certificateAuthorities:
+    - ca.org2.fabric-iot.edu
+peers:
+  peer0.org2.fabric-iot.edu:
+    url: grpcs://localhost:9051
+    tlsCACerts:
+      pem: |
+        -----BEGIN CERTIFICATE-----
+        MIICYjCCAgmgAwIBAgIQPj/D3tWqTKtYGoYUqMl1ojAKBggqhkjOPQQDAjB8MQsw
+        CQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy
+        YW5jaXNjbzEcMBoGA1UEChMTb3JnMi5mYWJyaWMtaW90LmVkdTEiMCAGA1UEAxMZ
+        dGxzY2Eub3JnMi5mYWJyaWMtaW90LmVkdTAeFw0yMTA3MjYxMTM3MDBaFw0zMTA3
+        MjQxMTM3MDBaMHwxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYw
+        FAYDVQQHEw1TYW4gRnJhbmNpc2NvMRwwGgYDVQQKExNvcmcyLmZhYnJpYy1pb3Qu
+        ZWR1MSIwIAYDVQQDExl0bHNjYS5vcmcyLmZhYnJpYy1pb3QuZWR1MFkwEwYHKoZI
+        zj0CAQYIKoZIzj0DAQcDQgAE7EYd18X1NSL2bea32uaQl9frAonaDD+Os95x7ZiD
+        4ogbPGuJx/LvzvHvloVj6sCTImJCt19vDJpZ1xk9NhZrJKNtMGswDgYDVR0PAQH/
+        BAQDAgGmMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATAPBgNVHRMBAf8E
+        BTADAQH/MCkGA1UdDgQiBCCUTGIPkcC4tRvJMz72Ekg74MDXyNog66Q4QiKgYtJU
+        wzAKBggqhkjOPQQDAgNHADBEAiAwdvhC6QI7AiLsSwKFPMdey4E0bOgvEW5Kpor2
+        2jQPZQIgQFp679Px+apg4+lfcLzLzRkTgFCbsRIZC6oUUHwIc+M=
+        -----END CERTIFICATE-----
+        
+    grpcOptions:
+      ssl-target-name-override: peer0.org2.fabric-iot.edu
+      hostnameOverride: peer0.org2.fabric-iot.edu
+  peer1.org2.fabric-iot.edu:
+    url: grpcs://localhost:10051
+    tlsCACerts:
+      pem: |
+        -----BEGIN CERTIFICATE-----
+        MIICYjCCAgmgAwIBAgIQPj/D3tWqTKtYGoYUqMl1ojAKBggqhkjOPQQDAjB8MQsw
+        CQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy
+        YW5jaXNjbzEcMBoGA1UEChMTb3JnMi5mYWJyaWMtaW90LmVkdTEiMCAGA1UEAxMZ
+        dGxzY2Eub3JnMi5mYWJyaWMtaW90LmVkdTAeFw0yMTA3MjYxMTM3MDBaFw0zMTA3
+        MjQxMTM3MDBaMHwxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYw
+        FAYDVQQHEw1TYW4gRnJhbmNpc2NvMRwwGgYDVQQKExNvcmcyLmZhYnJpYy1pb3Qu
+        ZWR1MSIwIAYDVQQDExl0bHNjYS5vcmcyLmZhYnJpYy1pb3QuZWR1MFkwEwYHKoZI
+        zj0CAQYIKoZIzj0DAQcDQgAE7EYd18X1NSL2bea32uaQl9frAonaDD+Os95x7ZiD
+        4ogbPGuJx/LvzvHvloVj6sCTImJCt19vDJpZ1xk9NhZrJKNtMGswDgYDVR0PAQH/
+        BAQDAgGmMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATAPBgNVHRMBAf8E
+        BTADAQH/MCkGA1UdDgQiBCCUTGIPkcC4tRvJMz72Ekg74MDXyNog66Q4QiKgYtJU
+        wzAKBggqhkjOPQQDAgNHADBEAiAwdvhC6QI7AiLsSwKFPMdey4E0bOgvEW5Kpor2
+        2jQPZQIgQFp679Px+apg4+lfcLzLzRkTgFCbsRIZC6oUUHwIc+M=
+        -----END CERTIFICATE-----
+        
+    grpcOptions:
+      ssl-target-name-override: peer1.org2.fabric-iot.edu
+      hostnameOverride: peer1.org2.fabric-iot.edu
+certificateAuthorities:
+  ca.org2.fabric-iot.edu:
+    url: https://localhost:8054
+    caName: ca-org2
+    tlsCACerts:
+      pem: |
+        -----BEGIN CERTIFICATE-----
+        MIICXTCCAgOgAwIBAgIQTjEi3tOXTF9JImQteDmZRjAKBggqhkjOPQQDAjB5MQsw
+        CQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy
+        YW5jaXNjbzEcMBoGA1UEChMTb3JnMi5mYWJyaWMtaW90LmVkdTEfMB0GA1UEAxMW
+        Y2Eub3JnMi5mYWJyaWMtaW90LmVkdTAeFw0yMTA3MjYxMTM3MDBaFw0zMTA3MjQx
+        MTM3MDBaMHkxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYD
+        VQQHEw1TYW4gRnJhbmNpc2NvMRwwGgYDVQQKExNvcmcyLmZhYnJpYy1pb3QuZWR1
+        MR8wHQYDVQQDExZjYS5vcmcyLmZhYnJpYy1pb3QuZWR1MFkwEwYHKoZIzj0CAQYI
+        KoZIzj0DAQcDQgAE2PG83StnZsla/AeRHmyJcZnIBnn6A3AD+n9pAa2uHtEwzrZV
+        U65nGDnUs1rZEZGZWvxUK99uXKNqhTjA5yD+4qNtMGswDgYDVR0PAQH/BAQDAgGm
+        MB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATAPBgNVHRMBAf8EBTADAQH/
+        MCkGA1UdDgQiBCDK+ptP8z1neOA99ye/07n/ZCsuaW6SM1OsHQtjmj9KETAKBggq
+        hkjOPQQDAgNIADBFAiEAr2mwngj8k3f5pPKkgtfmjSCqCsTpIefpUrswP7tqI/sC
+        IGcbkvrFuHIJRwxD7aCAZv/RhggBoEOnXfgXMCz+KQnx
+        -----END CERTIFICATE-----
+        
+    httpOptions:
+      verify: false
