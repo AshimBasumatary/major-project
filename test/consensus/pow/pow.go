@@ -6,7 +6,7 @@ import (
 	"github.com/AshimBasumatary/blockchain/core"
 
 	mqtt "github.com/eclipse/paho.mqtt.golang"
-	"github.com/AshimBasumatary/project/test/consensus/kafka"
+	"github.com/AshimBasumatary/major-project/test/consensus/kafka"
 )
 
 const (
