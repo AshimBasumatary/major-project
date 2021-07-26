@@ -23,7 +23,7 @@ func (r *ABACRequest) ToBytes() []byte {
 type Attrs struct {
 	DeviceId  string
 	UserId    string
-	Timestamp string
+	Timestamp int64
 }
 
 func (a Attrs) GetId() string {
