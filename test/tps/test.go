@@ -199,19 +199,7 @@ func GetURL(cc_name, f_name string, args ...string) string {
 	return fmt.Sprintf("%s?cc_name=%s&f_name=%s&args=%s", BASE_URL, cc_name, f_name, strings.Join(args, "|"))
 }
 
-func RandomX(N, n int) string {
-	ip := []string{}
-	for i := 0; i < N; i++ {
-		r := rand.New(rand.NewSource(time.Now().UnixNano()))
-		ip = append(ip, strconv.FormatInt(int64(r.Intn(n)), 16))
-	}
-	return strings.Join(ip, ":")
-}
 
 func RandomMac() string {
 	return RandomX(6, 64)
-}
-
-func RandomIPv6() string {
-	return RandomX(8, 65536)
 }
